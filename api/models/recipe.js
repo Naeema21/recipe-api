@@ -1,10 +1,25 @@
-const mongoose = require('mongoose')
+//In this file we create Authentication (JWT) Token
+const mongoose = require('mongoose');
 
 const recipeSchema = mongoose.Schema({
-    image:{type:"String", required:"Required image"},
-    title:{type:"String" , required:"Required Title"},
-    process:{type:"String" , required:"Required Process"}
-},{ timestamps: true });
+    title: {
+        type: String,
+        required: 'Please enter  title'
+    },
+    img: {
+        type: String,
+        required: 'Please enter image'
+    },
+    process: {
+        type: String,
+        required: 'Please enter recipe'
+    },
+},
+    {
+        timestamps: true,
+    });
 
-const order = new mongoose.model("recipe",recipeSchema)
-module.exports = order
+// we will create a new connection
+
+const Recipe = new mongoose.model('Recipe', recipeSchema);
+module.exports = Recipe;
