@@ -1,4 +1,3 @@
-//In this file we create Authentication (JWT) Token
 const mongoose = require('mongoose');
 
 const recipeSchema = mongoose.Schema({
@@ -19,7 +18,6 @@ const recipeSchema = mongoose.Schema({
         timestamps: true,
     });
 
-// we will create a new connection
 
 const Recipe = new mongoose.model('Recipe', recipeSchema);
 module.exports = Recipe;

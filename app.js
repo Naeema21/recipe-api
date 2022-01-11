@@ -2,13 +2,12 @@ const express = require('express')
 const app =express()
 const morgan = require('morgan')
 const db = require('./db')
-const recipe = require('./api/routes/recipe')
+const RecipeRoutes = require('./api/routes/recipe')
 
 const bodyParser = require('body-parser')
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json());
-app.use('/recipe' , recipe)
 
 //cors handling
 app.use((req,res,next)=>{
@@ -25,8 +24,11 @@ app.use((req,res,next)=>{
 });
 
 
+app.use("/recipe", RecipeRoutes);
+
+
 app.get('/', (req, res) => {
-	res.send('Welcome to recipe app!')
+	res.send('Welcome to daruwale!')
 });
 
 //error handling

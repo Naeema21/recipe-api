@@ -24,9 +24,9 @@ const getAllData = async (req, res,) => {
 //add product
 const addRecipe = async (req, res) => {
     const recipe = Recipe({
-        title:req.body.title,
-        img:req.body.img,
-        process:req.body.process
+        title: req.body.title,
+        img: req.body.img,
+        process: req.body.process
     });
     recipe.save()
         .then(result => {
@@ -74,7 +74,7 @@ const deleteData = async (req, res) => {
 module.exports =
 {
     getAllData,
-  addRecipe,
-  deleteData
+    addRecipe,
+    deleteData
 
 }
