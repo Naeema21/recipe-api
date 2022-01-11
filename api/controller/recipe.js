@@ -22,7 +22,8 @@ const getrecipe = async (req, res, next) => {
 const postrecipe = (req, res, next) => {
     const recipemodel = recipeModel({
         title: req.body.title,
-        recipe: req.body.recipe
+        process: req.body.process,
+        image:req.body.image
     })
     recipemodel.save().then(doc =>
         res.status(200).json({
